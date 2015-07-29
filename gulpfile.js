@@ -3,7 +3,7 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 
-var srcPath = 'src/helloworld.js';
+var srcPath = 'src/application.js';
 
 gulp.task('build', function () {
   browserify({
@@ -14,11 +14,11 @@ gulp.task('build', function () {
   .transform(babelify)
   .bundle()
   .pipe(source('application.js'))
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('public/assets'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch(srcPath, ['build']);
+  gulp.watch('src/**/*.js', ['build']);
 });
 
 

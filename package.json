@@ -3,6 +3,10 @@
   "description": "Fantasy Celebrity",
   "repository": "https://github.com/gmassanek/fantasy-celebrity-react.git",
   "version": "0.0.1",
+  "scripts": {
+    "start": "grunt",
+    "build": "gulp build && cp public/index.html ../fantasy-celebrity-api/public/ && cp public/assets/* ../fantasy-celebrity-api/public/assets/"
+  },
   "devDependencies": {
     "babelify": "^6.1.3",
     "browserify": "^11.0.0",
