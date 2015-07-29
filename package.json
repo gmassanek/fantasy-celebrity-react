@@ -1,0 +1,14 @@
+{
+  "name": "fantasy-celebrity-react",
+  "description": "Fantasy Celebrity",
+  "repository": "https://github.com/gmassanek/fantasy-celebrity-react.git",
+  "version": "0.0.1",
+  "devDependencies": {
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.0",
+    "gulp": "^3.9.0",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

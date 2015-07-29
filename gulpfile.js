@@ -13,7 +13,7 @@ gulp.task('build', function () {
   })
   .transform(babelify)
   .bundle()
-  .pipe(source('bundle.js'))
+  .pipe(source('application.js'))
   .pipe(gulp.dest('dist'));
 });
 
