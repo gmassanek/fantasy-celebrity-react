@@ -1,3 +1,5 @@
+import React, { findDOMNode } from 'react';
+
 var HelloWorld = React.createClass({
   render: function() {
     return (

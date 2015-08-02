@@ -12,7 +12,7 @@
     "browserify": "^11.0.0",
     "gulp": "^3.9.0",
     "react": "^0.13.3",
-    "react-router": "^0.13.3",
+    "react-router": "1.0.0-beta3",
     "vinyl-source-stream": "^1.1.0"
   }
 }
