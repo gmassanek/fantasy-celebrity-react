@@ -13,6 +13,7 @@
     "gulp": "^3.9.0",
     "gulp-bower": "0.0.10",
     "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4",
     "react": "^0.13.3",
     "react-router": "1.0.0-beta3",
     "vinyl-source-stream": "^1.1.0"

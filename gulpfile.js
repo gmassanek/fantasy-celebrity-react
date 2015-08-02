@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var bower = require('gulp-bower')
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -17,6 +18,28 @@ gulp.task('vendorJS', function(){
   .pipe(gulp.dest('./public/assets/'));
 });
 
+gulp.task('vendorCSS', function(){
+  gulp.src([
+    './vendor/mvpready-admin.css'
+  ])
+  .pipe(sass().on('error', sass.logError))
+  .pipe(concat('vendor.css'))
+  .pipe(gulp.dest('public/assets'));
+});
+
+gulp.task('watchSass', function() {
+  gulp.watch('src/**/*.scss', ['sass']);
+});
+
+gulp.task('sass', function(){
+  gulp.src([
+    'src/application.scss'
+  ])
+  .pipe(sass().on('error', sass.logError))
+  .pipe(concat('application.css'))
+  .pipe(gulp.dest('public/assets'));
+});
+
 var srcPath = 'src/application.js';
 gulp.task('build', function () {
   browserify({
@@ -30,8 +53,8 @@ gulp.task('build', function () {
   .pipe(gulp.dest('public/assets'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watchJs', function() {
   gulp.watch('src/**/*.js', ['build']);
 });
 
-gulp.task('default', ['vendorJS', 'build', 'watch']);
+gulp.task('default', ['vendorJS', 'sass', 'build', 'watchJs', 'watchSass']);
