@@ -5,7 +5,7 @@ var history = require('react-router/lib/BrowserHistory').history;
 // Components
 import League from './components/League';
 import Leagues from './components/Leagues';
-import LeaguePositions from './components/LeaguePositions';
+import Scoring from './components/Scoring';
 
 var App = React.createClass({
   render () {
@@ -175,7 +175,6 @@ var App = React.createClass({
 
 var NotFound = React.createClass({
   render() {
-    console.log("woooo");
     return <h2>Not found</h2>;
   }
 });
@@ -184,7 +183,7 @@ React.render((
   <Router history={history}>
     <Route path="/" component={App}>
       <Route path="leagues" component={Leagues}/>
-      <Route path="leagues/:id" component={League}/>
+      <Route path="leagues/:id/scoring" component={Scoring}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

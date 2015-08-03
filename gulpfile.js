@@ -10,6 +10,8 @@ gulp.task('vendorJS', function(){
   gulp.src([
     './bower_components/jquery/dist/jquery.min.js',
     './bower_components/slimscroll/jquery.slimscroll.min.js',
+    './bower_components/datatables/media/js/jquery.dataTables.min.js',
+    './bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js',
     './vendor/mvpready-admin.js',
     './vendor/mvpready-core.js',
     './vendor/mvpready-helpers.js'
