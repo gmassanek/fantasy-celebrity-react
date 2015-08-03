@@ -2,6 +2,11 @@ import React, { findDOMNode } from 'react';
 import { Router, Route, Link } from 'react-router';
 var history = require('react-router/lib/BrowserHistory').history;
 
+// Components
+import League from './components/League';
+import Leagues from './components/Leagues';
+import LeaguePositions from './components/LeaguePositions';
+
 var App = React.createClass({
   render () {
     return (
@@ -168,20 +173,6 @@ var App = React.createClass({
   }
 });
 
-var Hello = React.createClass({
-  render() {
-    console.log("hello");
-    return <h2>Hello</h2>;
-  }
-});
-
-var World = React.createClass({
-  render() {
-    console.log("world");
-    return <h2>World</h2>;
-  }
-});
-
 var NotFound = React.createClass({
   render() {
     console.log("woooo");
@@ -192,8 +183,8 @@ var NotFound = React.createClass({
 React.render((
   <Router history={history}>
     <Route path="/" component={App}>
-      <Route path="hello" component={Hello}/>
-      <Route path="world" component={World}/>
+      <Route path="leagues" component={Leagues}/>
+      <Route path="leagues/:id" component={League}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>
