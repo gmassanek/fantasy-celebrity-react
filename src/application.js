@@ -104,55 +104,57 @@ var App = React.createClass({
               <nav className="collapse mainnav-collapse" role="navigation">
                 <ul className="mainnav-menu">
                   <li className="dropdown is-open">
-                    <a href="/leagues/{{ model.id }}" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                    <Link to={`/leagues/${this.props.params.league_id}`} className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
                       League
                       <i className="mainnav-caret"></i>
-                    </a>
+                    </Link>
 
                     <ul className="dropdown-menu" role="menu">
                       <li>
-                        <a href="/leagues/{{ model.id }}">
+                        <Link to={`/leagues/${this.props.params.league_id}`}>
                           <i className="fa fa-dashboard dropdown-icon "></i>
                           Dashboard
-                        </a>
+                        </Link>
                       </li>
 
                       <li>
-                        <a href="/leagues/{{ model.id }}/positions">
+                        <Link to={`/leagues/${this.props.params.league_id}/positions`}>
                           <i className="fa fa-dashboard dropdown-icon "></i>
                           Positions
-                        </a>
+                        </Link>
                       </li>
 
                       <li>
-                        <a href="/leagues/{{ model.id }}/scoring">
+                        <Link to={`/leagues/${this.props.params.league_id}/scoring`}>
                           <i className="fa fa-dashboard dropdown-icon "></i>
                           Scoring
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <a href="/leagues/{{ model.id }}/teams/2"> My Team </a>
+                    <Link to={`/leagues/${this.props.params.league_id}/teams/2`}>
+                      My Team
+                    </Link>
                   </li>
 
                   <li>
-                    <a href="leagues/{{ model.id }}/players">
+                    <Link to={`/leagues/${this.props.params.league_id}/players`}>
                       Players
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a href="leagues/{{ model.id }}/points">
+                    <Link to={`/leagues/${this.props.params.league_id}/points`}>
                       Points
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a href="leagues/{{ model.id }}/standings">
+                    <Link to={`/leagues/${this.props.params.league_id}/standings`}>
                       Standings
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -184,8 +186,8 @@ React.render((
   <Router history={history}>
     <Route path="/" component={App}>
       <Route path="leagues" component={Leagues}/>
-      <Route path="leagues/:id/scoring" component={Scoring}/>
-      <Route path="leagues/:id/positions" component={LeaguePositions}/>
+      <Route path="leagues/:league_id/scoring" component={Scoring}/>
+      <Route path="leagues/:league_id/positions" component={LeaguePositions}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>
