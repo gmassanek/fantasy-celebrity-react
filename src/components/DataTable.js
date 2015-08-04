@@ -1,9 +1,17 @@
 import React, { findDOMNode } from 'react';
 
 var DataTable = React.createClass({
-
   componentDidUpdate: function() {
-    var initAttrs = {};
+    var initAttrs = {
+      info: this.props.info,
+      lengthChange: this.props.lengthChange,
+      pageLength: this.props.pageLength,
+      paging: this.props.paging,
+      searching: this.props.searching,
+      ordering: this.props.ordering,
+      initOrderCol: this.props.initOrderCol,
+      initOrderDir: this.props.initOrderDir
+    };
 
     if(this.props.ordering) {
       initAttrs.order = [[this.props.initOrderCol, this.props.initOrderDir]];
@@ -14,17 +22,7 @@ var DataTable = React.createClass({
 
   render: function() {
     return (
-      <table className="table table-striped table-bordered table-hover ui-datatable"
-        data-data-data-length-change={this.props.lengthChange}
-        data-data-info={this.props.info}
-        data-data-paging={this.props.paging}
-        data-data-page-length={this.props.pageLength}
-        data-data-searching={this.props.searching} 
-        data-ordering={this.props.ordering}
-        data-order={this.props.order}
-        data-searching={this.props.searching}
-      >
-
+      <table className="table table-striped table-bordered table-hover ui-datatable" >
         {this.props.children}
       </table>
     );

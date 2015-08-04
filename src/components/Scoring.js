@@ -38,7 +38,7 @@ var LeaguePositions = React.createClass({
             Scoring
           </h3>
         </div> 
-        <DataTable ordering={true} searching={true} paging={true} pageLength={25}>
+        <DataTable ordering={true} searching={true} paging={true} pageLength={30} lengthChange={true}>
           <thead>
             <tr role="row">
               <th aria-label="Group">Group</th>
