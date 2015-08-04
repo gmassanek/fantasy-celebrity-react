@@ -6,6 +6,7 @@ var history = require('react-router/lib/BrowserHistory').history;
 import League from './components/League';
 import Leagues from './components/Leagues';
 import Scoring from './components/Scoring';
+import LeaguePositions from './components/LeaguePositions';
 
 var App = React.createClass({
   render () {
@@ -184,6 +185,7 @@ React.render((
     <Route path="/" component={App}>
       <Route path="leagues" component={Leagues}/>
       <Route path="leagues/:id/scoring" component={Scoring}/>
+      <Route path="leagues/:id/positions" component={LeaguePositions}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

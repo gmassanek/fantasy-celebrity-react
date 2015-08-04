@@ -1,27 +1,26 @@
 import React, { findDOMNode } from 'react';
 import DataTable from './DataTable';
 
-var LeaguePositions = React.createClass({
+var Scoring = React.createClass({
   getInitialState: function() {
     return {
-      point_categories: []
+      pointCategories: []
     };
   },
 
   componentDidMount: function() {
     $.get("/api/v1/leagues/1/league_point_categories", function(result) {
       if (this.isMounted()) {
-        this.setState({ point_categories: result.league_point_categories });
+        this.setState({ pointCategories: result.league_point_categories });
       }
     }.bind(this));
   },
 
   render: function() {
     console.log("Render Scoring");
-    var lastCategory = null;
     var rows = [];
 
-    this.state.point_categories.forEach(function(pointCategory) {
+    this.state.pointCategories.forEach(function(pointCategory) {
       rows.push(
         <tr role="row">
           <td>{pointCategory.group}</td>
@@ -55,4 +54,4 @@ var LeaguePositions = React.createClass({
   }
 });
 
-export default LeaguePositions;
+export default Scoring;
