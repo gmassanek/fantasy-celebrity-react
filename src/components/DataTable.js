@@ -33,7 +33,7 @@ DataTable.defaultProps = {
   info: false,
   lengthChange: false,
   pageLength: 10,
-  paging: true,
+  paging: false,
   searching: false,
   ordering: false,
   initOrderCol: 0,

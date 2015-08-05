@@ -7,6 +7,7 @@ import League from './components/League';
 import Leagues from './components/Leagues';
 import Scoring from './components/Scoring';
 import LeaguePositions from './components/LeaguePositions';
+import LeagueStandings from './components/LeagueStandings';
 
 var App = React.createClass({
   render () {
@@ -188,6 +189,7 @@ React.render((
       <Route path="leagues" component={Leagues}/>
       <Route path="leagues/:league_id/scoring" component={Scoring}/>
       <Route path="leagues/:league_id/positions" component={LeaguePositions}/>
+      <Route path="leagues/:league_id/standings" component={LeagueStandings}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

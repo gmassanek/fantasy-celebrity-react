@@ -9,7 +9,7 @@ var LeaguePositions = React.createClass({
   },
 
   componentDidMount: function() {
-    $.get("/api/v1/leagues/1/positions", function(result) {
+    $.get(`/api/v1/leagues/${this.props.params.league_id}/positions`, function(result) {
       if (this.isMounted()) {
         this.setState({ leaguePositions: result.positions });
       }

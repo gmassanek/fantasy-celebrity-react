@@ -9,7 +9,7 @@ var Scoring = React.createClass({
   },
 
   componentDidMount: function() {
-    $.get("/api/v1/leagues/1/league_point_categories", function(result) {
+    $.get(`/api/v1/leagues/${this.props.params.league_id}/league_point_categories`, function(result) {
       if (this.isMounted()) {
         this.setState({ pointCategories: result.league_point_categories });
       }
@@ -37,7 +37,7 @@ var Scoring = React.createClass({
             Scoring
           </h3>
         </div> 
-        <DataTable ordering={true} searching={true} paging={true} pageLength={30} lengthChange={true}>
+        <DataTable ordering={true} searching={true} paging={true} pageLength={30}>
           <thead>
             <tr role="row">
               <th aria-label="Group">Group</th>
