@@ -17,5 +17,9 @@
     "react": "^0.13.3",
     "react-router": "1.0.0-beta3",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "caplet": "^2.0.0",
+    "underscore": "^1.8.3"
   }
 }
