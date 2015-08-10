@@ -1,7 +1,7 @@
 import React, { findDOMNode } from 'react';
 
 var DataTable = React.createClass({
-  componentDidUpdate: function() {
+  componentDidMount: function() {
     var initAttrs = {
       info: this.props.info,
       lengthChange: this.props.lengthChange,
