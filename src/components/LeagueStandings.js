@@ -31,6 +31,7 @@ var LeagueStandings = React.createClass({
               {team.title}
             </Link>
           </td>
+          <td>{team.owner}</td>
           <td>0</td>
         </tr>
       );
@@ -47,6 +48,7 @@ var LeagueStandings = React.createClass({
             <tr role="row">
               <th aria-label="Rank">Rank</th>
               <th aria-label="Team">Team</th>
+              <th aria-label="Owner">Owner</th>
               <th aria-label="Points">Points</th>
             </tr>
           </thead>
